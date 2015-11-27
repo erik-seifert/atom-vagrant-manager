@@ -1,13 +1,13 @@
 {
   "name": "atom-vagrant-manager",
   "main": "./lib/atom-vagrant-manager",
-  "version": "1.0.0",
-  "description": "A short description of your package",
+  "version": "1.0.2",
+  "description": "Add a manager for vagrant boxes",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "atom-vagrant-manager:toggle"
   },
-  "repository": "https://github.com/atom/atom-vagrant-manager",
+  "repository": "https://github.com/b-connect/atom-vagrant-manager",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
