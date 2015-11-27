@@ -1,5 +1,7 @@
 # atom-vagrant-manager package
 
-A short description of your package.
+A manager for start and stopping vagrant boxes.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+Use `ctrl + alt + v` for toogle the manager.
+
+![Screenshoot](screen.png)
