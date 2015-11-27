@@ -1,7 +1,7 @@
 {
   "name": "atom-vagrant-manager",
   "main": "./lib/atom-vagrant-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Add a manager for vagrant boxes",
   "keywords": [],
   "activationCommands": {
