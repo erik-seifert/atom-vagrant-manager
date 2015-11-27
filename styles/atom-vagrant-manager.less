@@ -1,0 +1,34 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.atom-vagrant-manager-detail-wrapper {
+  height: 100%;
+  overflow-y: scroll;
+
+  .red {
+    color: red;
+  }
+  .green {
+    color: green;
+  }
+  .yellow {
+    color: yellow;
+  }
+
+  .header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .running {
+    .start { display: none }
+    .processing { display: none }
+  }
+  .poweroff {
+    .stop { display: none }
+    .processing { display: none }
+  }
+}
