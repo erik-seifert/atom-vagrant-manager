@@ -1,6 +1,7 @@
 vagrant = require 'node-vagrant'
 {$, View} = require 'space-pen'
 {ScrollView} = require 'atom-space-pen-views'
+AtomVagrantManagerShellView = require './atom-vagrant-manager-shell'
 
 module.exports =
 class AtomVagrantManagerView extends View
@@ -10,6 +11,7 @@ class AtomVagrantManagerView extends View
   states: []
   timeout: null
   interval: 5000
+  view: false
 
   initialize: ->
     atom.commands.add @element,
@@ -35,6 +37,14 @@ class AtomVagrantManagerView extends View
     vagrant.version( (err, out) ->
       cb(err,out)
     )
+
+  initShellView:(item) ->
+    console.log 'Init shell view'
+    view = new AtomVagrantManagerShellView(item)
+    console.log '--- init ----'
+    pane = atom.workspace.getActivePane()
+    item = pane.addItem view, 0
+    pane.activateItem item
 
   attached: ->
     @version =
@@ -101,6 +111,14 @@ class AtomVagrantManagerView extends View
       $this.toggleMachine item
     )
 
+    list.find('button.shell').bind( 'click', ->
+      item = $(this).parents('.panel').eq(0).data('item')
+      $this.initShellView item
+    )
+
+  startShell:(item) ->
+
+
   stopAll: ->
     @states.forEach((v)->
       machine = vagrant.create({cwd : v.cwd})
@@ -129,10 +147,13 @@ class AtomVagrantManagerView extends View
       console.log 'Status',status
       if status == 'running'
         machine.halt((err,res) ->
+          console.log res
+          console.log err
         )
       else if status == 'poweroff'
         machine.up((err,res) ->
-
+          console.log res
+          console.log err
         )
     )
 
@@ -151,6 +172,9 @@ class AtomVagrantManagerView extends View
                 '</button>' +
                 '<button class="start btn icon icon-triangle-right green">' +
                   'Start' +
+                '</button>' +
+                '<button class="shell btn icon icon-triangle-right green">' +
+                  'Shell' +
                 '</button>' +
               '</div>' +
               '</div>' +

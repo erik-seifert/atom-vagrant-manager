@@ -15,6 +15,7 @@
   "dependencies": {
     "atom-space-pen-views": "^2.1.0",
     "node-vagrant": "^1.0.6",
-    "space-pen": "^5.1.1"
+    "space-pen": "^5.1.1",
+    "ssh2": "^0.4.12"
   }
 }

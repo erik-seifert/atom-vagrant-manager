@@ -3,6 +3,22 @@
 // See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
 // for a full listing of what's available.
 @import "ui-variables";
+#atom-vagrant-manager-shell-output {
+  font-family: monospace;
+  overflow-y: scroll;
+  height: 90%;
+  font-size: 80%;
+  .command-command {
+    color: green;
+  }
+  .command-error {
+    color: red;
+  }
+  .command-output {
+    color: yellow;
+  }
+}
+
 
 .atom-vagrant-manager-detail-wrapper {
   height: 100%;
@@ -30,5 +46,6 @@
   .poweroff {
     .stop { display: none }
     .processing { display: none }
+    .shell { display: none }
   }
 }
